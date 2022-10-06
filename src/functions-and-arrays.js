@@ -20,13 +20,18 @@ const words = [
   "crackpot",
 ];
 function findLongestWord(words) {
+  let findLongestWord = "";
   let longestWord = 0;
+  if (words.length === 0) {
+    return null;
+  }
   for (let word = 0; word < words.length; word++) {
     if (words[word].length > longestWord) {
+      findLongestWord = words[word];
       longestWord = words[word].length;
-      return longestWord;
     }
   }
+  return findLongestWord;
 }
 
 // Iteration #3: Calculate the sum
@@ -46,7 +51,17 @@ function sum() {}
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
-function averageNumbers() {}
+function averageNumbers(numbersAvg) {
+  if (numbersAvg.length === 0) {
+    return null;
+  }
+  let sum = sumNumbers(numbersAvg);
+  // //let sum = 0;
+  // for (let i = 0; i < numbersAvg.length; i++) {
+  //   sum += numbersAvg[i];
+  // }
+  return sum / numbersAvg.length;
+}
 
 // Level 2: Array of strings
 const wordsArr = [
